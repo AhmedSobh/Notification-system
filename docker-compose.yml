@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  nodejs:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: dev
+
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATABASE=$DATABASE
+      - AMQP_URL=$AMQP_URL
+      - SMS_LIMIT=$SMS_LIMIT
+      - EMAIL_LIMIT=$EMAIL_LIMIT
+      - PUSH_LIMIT=$PUSH_LIMIT
+      - NODE_ENV= development
+      - REDIS_PORT=$REDIS_PORT
+      - REDIS_URL=$REDIS_URL
+      - REDIS_PASS=$REDIS_PASS
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/src
+    command: npm run dev

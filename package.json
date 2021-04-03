@@ -1,0 +1,32 @@
+{
+  "name": "swvl-task",
+  "version": "1.0.0",
+  "description": "handling notfication system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.7.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2",
+    "redis": "^3.0.2",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "^12"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  }
+}
